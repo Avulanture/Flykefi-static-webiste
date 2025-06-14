@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyKefi</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Additional styles for testimonials section */
+        .testimonials {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .testimonials p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-widget {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -14,6 +53,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -47,9 +87,29 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <p>Don't just take our word for it. Here's what our amazing travelers have to say about their unforgettable experiences with FlyKefi.</p>
+            
+                <script type="text/javascript" src="https://unpkg.com/iframe-resizer@4.3.1/js/iframeResizer.min.js"></script>
+                <iframe 
+                    id="my-testimonial-widget" 
+                    src="https://widgetify-sample.netlify.app/wall" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    width="100%"
+                    style="border: none; display: block;">
+                </iframe>
+                <script type="text/javascript">
+                    iFrameResize({ log: false, checkOrigin: false }, "#my-testimonial-widget");
+                </script>
+    </section>
+
     <section id="about" class="about">
         <h2>About FlyKefi</h2>
-        <p>FlyKefi is your gateway to memorable travel experiences, offering diverse packages and personalized services for every kind of traveler. We aim to make your journeys exciting and hassle-free.</p>
+        <p>FlyKefi is your gateway to memorable travel experiences, offering diverse packages and personalized services
+            for every kind of traveler. We aim to make your journeys exciting and hassle-free.</p>
     </section>
 
     <footer id="contact">
@@ -58,4 +118,5 @@
         <p>© 2024 Avulanture Travel Pvt Ltd | All rights reserved</p>
     </footer>
 </body>
+
 </html>
