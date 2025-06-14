@@ -44,6 +44,11 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
 }
 
 /* Hero Section */
@@ -54,6 +59,7 @@ nav ul li a {
     text-align: center;
     padding: 100px 20px;
     overflow: hidden;
+    min-height: 500px;
 }
 
 .hero::before {
@@ -63,15 +69,16 @@ nav ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust opacity here */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Ensures content stays above the overlay */
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
-
 
 .hero-content h2 {
     font-size: 36px;
@@ -85,12 +92,18 @@ nav ul li a {
 
 .hero-content .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #ffcc00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-content .btn:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
 }
 
 /* Services Section */
@@ -103,26 +116,43 @@ nav ul li a {
 .services h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 .service-items {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-item {
     background: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
-    max-width: 300px;
+    max-width: 350px;
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .service-item h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #4d8500;
+}
+
+.service-item p {
+    color: #666;
+    line-height: 1.6;
 }
 
 /* About Section */
@@ -135,12 +165,15 @@ nav ul li a {
 .about h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 .about p {
     font-size: 18px;
     max-width: 800px;
     margin: 0 auto;
+    color: #666;
+    line-height: 1.7;
 }
 
 /* Footer */
@@ -148,14 +181,169 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 20px;
 }
 
 footer h2 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 footer p {
     font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Header Mobile */
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    nav ul li {
+        margin-left: 0;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    /* Hero Mobile */
+    .hero {
+        padding: 60px 15px;
+        min-height: 400px;
+    }
+    
+    .hero-content h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-content .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Services Mobile */
+    .services {
+        padding: 40px 15px;
+    }
+    
+    .services h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .service-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .service-item {
+        width: 100%;
+        max-width: 400px;
+        padding: 25px;
+    }
+    
+    .service-item h3 {
+        font-size: 18px;
+    }
+    
+    .service-item p {
+        font-size: 15px;
+    }
+    
+    /* About Mobile */
+    .about {
+        padding: 40px 15px;
+    }
+    
+    .about h2 {
+        font-size: 24px;
+    }
+    
+    .about p {
+        font-size: 16px;
+    }
+    
+    /* Footer Mobile */
+    footer {
+        padding: 25px 15px;
+    }
+    
+    footer h2 {
+        font-size: 18px;
+    }
+    
+    footer p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .hero-content h2 {
+        font-size: 24px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+    }
+    
+    .services h2, .about h2 {
+        font-size: 22px;
+    }
+    
+    .service-item {
+        padding: 20px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    /* Simple mobile menu toggle could be added here */
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero {
+        padding: 80px 30px;
+    }
+    
+    .hero-content h2 {
+        font-size: 32px;
+    }
+    
+    .services, .about {
+        padding: 50px 30px;
+    }
+    
+    .service-items {
+        gap: 25px;
+    }
+    
+    .service-item {
+        flex: 1;
+        min-width: 200px;
+        max-width: 280px;
+    }
 }
